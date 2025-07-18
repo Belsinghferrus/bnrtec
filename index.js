@@ -65,4 +65,19 @@ tabs.forEach(btn => {
 });
 
 
-  
+const menuBtn = document.getElementById("menuBtn");
+const mobileMenu = document.getElementById("mobileMenu");
+const closeMenu = document.getElementById("closeMenu");
+
+menuBtn.addEventListener("click", () => {
+  mobileMenu.classList.remove("translate-x-full");
+});
+
+closeMenu.addEventListener("click", () => {
+  mobileMenu.classList.add("translate-x-full");
+});
+document.querySelectorAll("#mobileMenu nav a").forEach(link => {
+    link.addEventListener("click", () => {
+      mobileMenu.classList.add("translate-x-full");
+    });
+  });
