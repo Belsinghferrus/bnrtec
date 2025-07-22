@@ -74,6 +74,7 @@ document.querySelectorAll("#mobileMenu nav a").forEach(link => {
     });
   });
 
+  
 
   // HERO IMAGE LOADING ANIMATION
   const heroSection = document.getElementById('hero-section');

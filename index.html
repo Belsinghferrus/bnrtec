@@ -51,7 +51,30 @@
 
   </header>
 
+ <!-- Mobile Nav Overlay -->
+ <div id="mobileMenu"
+ class="fixed inset-0 z-50 bg-white/10 backdrop-blur-md text-white px-6 py-8 transform translate-x-full transition-transform duration-300 ease-in-out md:hidden">
 
+ <!-- Close Button -->
+ <div class="flex justify-end mb-8">
+   <button id="closeMenu" class="text-white hover:text-red-400 transition">
+     <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+       <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+     </svg>
+   </button>
+ </div>
+
+ <!-- Nav Links -->
+ <nav class="space-y-6 text-center text-lg font-medium">
+   <a href="#" class="block hover:underline">Home</a>
+   <a href="#about" class="block hover:underline">About</a>
+   <a href="#expertise" class="block hover:underline">Expertise</a>
+   <a href="#products" class="block hover:underline">Products</a>
+   <a href="#services" class="block hover:underline">Services</a>
+   <a href="#industries" class="block hover:underline">Industries</a>
+   <a href="#contact" class="block hover:underline">Contact</a>
+ </nav>
+</div>
 
   <section id="hero-section" class="relative h-screen w-full bg-cover bg-center transition-all duration-1000"
     style="background-image: url('./assets/bnr-hero.webp');">
@@ -77,32 +100,9 @@
 
 
   <!-- ABOUT -->
-  <section id="about" data-aos="zoom-in" class="relative bg-white py-20 scroll-mt-24">
+  <section id="about" data-aos="zoom-in" data-aos-anchor-placement="top-bottom" class="relative bg-white py-20 scroll-mt-24">
     <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
-      <!-- Mobile Nav Overlay -->
-      <div id="mobileMenu"
-        class="fixed inset-0 z-50 bg-white/10 backdrop-blur-md text-white px-6 py-8 transform translate-x-full transition-transform duration-300 ease-in-out md:hidden">
-
-        <!-- Close Button -->
-        <div class="flex justify-end mb-8">
-          <button id="closeMenu" class="text-white hover:text-red-400 transition">
-            <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </button>
-        </div>
-
-        <!-- Nav Links -->
-        <nav class="space-y-6 text-center text-lg font-medium">
-          <a href="#" class="block hover:underline">Home</a>
-          <a href="#about" class="block hover:underline">About</a>
-          <a href="#expertise" class="block hover:underline">Expertise</a>
-          <a href="#products" class="block hover:underline">Products</a>
-          <a href="#services" class="block hover:underline">Services</a>
-          <a href="#industries" class="block hover:underline">Industries</a>
-          <a href="#contact" class="block hover:underline">Contact</a>
-        </nav>
-      </div>
+     
       <!-- Left Side: Visual -->
       <div class="relative h-72 md:h-[380px]  rounded-xl shadow-xl">
         <img src="./assets/about-bnr.jpg" alt="Engineering Visual"
@@ -136,7 +136,7 @@
 
       <div class="grid md:grid-cols-3 sm:grid-cols-2 gap-10">
 
-        <div data-aos="zoom-in-up" class="bg-white border rounded-xl overflow-hidden shadow-md hover:shadow-xl transition duration-300">
+        <div data-aos="zoom-in-up"  data-aos-anchor-placement="top-bottom" class="bg-white border rounded-xl overflow-hidden shadow-md hover:shadow-xl transition duration-300">
           <img src="./assets/Durabiliy-testing.webp" alt="Durability Testing" class="w-full h-40 object-cover">
           <div class="p-5">
             <h3 class="text-xl font-semibold text-[--primary] mb-2">Durability Testing Solution</h3>
@@ -145,7 +145,7 @@
           </div>
         </div>
 
-        <div data-aos="zoom-in-up" class="bg-white border rounded-xl overflow-hidden shadow-md hover:shadow-xl transition duration-300">
+        <div data-aos="zoom-in-up"  data-aos-anchor-placement="top-bottom" class="bg-white border rounded-xl overflow-hidden shadow-md hover:shadow-xl transition duration-300">
           <img src="./assets/dewtron.jpg" alt="DAQ Systems" class="w-full h-40 object-cover">
           <div class="p-5">
             <h3 class="text-xl font-semibold text-[--primary] mb-2">Universal Data Acquisition Systems</h3>
@@ -154,7 +154,7 @@
           </div>
         </div>
 
-        <div data-aos="zoom-in-up" class="bg-white border rounded-xl overflow-hidden shadow-md hover:shadow-xl transition duration-300">
+        <div data-aos="zoom-in-up"  data-aos-anchor-placement="top-bottom" class="bg-white border rounded-xl overflow-hidden shadow-md hover:shadow-xl transition duration-300">
           <img src="./assets/testing.png" alt="Servo Hydraulic" class="w-full h-40 object-cover lazy-loading">
           <div class="p-5">
             <h3 class="text-xl font-semibold text-[--primary] mb-2">Servo Hydraulic Systems</h3>
@@ -163,7 +163,7 @@
           </div>
         </div>
 
-        <div data-aos="zoom-in-up" class="bg-white border rounded-xl overflow-hidden shadow-md hover:shadow-xl transition duration-300">
+        <div data-aos="zoom-in-up"  data-aos-anchor-placement="top-bottom" class="bg-white border rounded-xl overflow-hidden shadow-md hover:shadow-xl transition duration-300">
           <img src="./assets/transducer.jpg" alt="Transducers" class="w-full h-40 object-cover">
           <div class="p-5">
             <h3 class="text-xl font-semibold text-[--primary] mb-2">All Types of Transducers</h3>
@@ -172,7 +172,7 @@
           </div>
         </div>
 
-        <div data-aos="zoom-in-up" class="bg-white border rounded-xl overflow-hidden shadow-md hover:shadow-xl transition duration-300">
+        <div data-aos="zoom-in-up"  data-aos-anchor-placement="top-bottom" class="bg-white border rounded-xl overflow-hidden shadow-md hover:shadow-xl transition duration-300">
           <img src="./assets/calibration.jpg" alt="Calibration" class="w-full h-40 object-cover">
           <div class="p-5">
             <h3 class="text-xl font-semibold text-[--primary] mb-2">Maintenance & Calibration</h3>
@@ -181,7 +181,7 @@
           </div>
         </div>
 
-        <div data-aos="zoom-in-up" class="bg-white border rounded-xl overflow-hidden shadow-md hover:shadow-xl transition duration-300">
+        <div data-aos="zoom-in-up"  data-aos-anchor-placement="top-bottom" class="bg-white border rounded-xl overflow-hidden shadow-md hover:shadow-xl transition duration-300">
           <img src="./assets/training.jpg" alt="Training" class="w-full h-40 object-cover">
           <div class="p-5">
             <h3 class="text-xl font-semibold text-[--primary] mb-2">Application-Based Trainings</h3>
@@ -190,7 +190,7 @@
           </div>
         </div>
 
-        <div data-aos="zoom-in-up" class="md:col-span-3 flex justify-center">
+        <div data-aos="zoom-in-up"  data-aos-anchor-placement="top-bottom" class="md:col-span-3 flex justify-center">
           <div class="bg-white rounded-xl shadow-md overflow-hidden w-full max-w-md">
             <img src="./assets/climatic-chambers.jpeg" alt="Climatic Chambers" class="w-full h-40 object-cover">
             <div class="p-5">
@@ -537,7 +537,7 @@
         longevity.
       </p>
 
-      <div data-aos="flip-left" class="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+      <div data-aos="flip-left" data-aos-anchor-placement="top-bottom" class="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
         <!-- Card 1 -->
         <div class="bg-white rounded-2xl shadow-md hover:shadow-lg transition duration-300 p-8 text-left">
           <div class="w-14 h-14 flex items-center justify-center rounded-xl bg-blue-100 text-blue-600 mb-6">
@@ -564,7 +564,7 @@
         </div>
 
         <!-- Card 2 (Highlighted) -->
-        <div data-aos="flip-left"
+        <div data-aos="flip-left" data-aos-anchor-placement="top-bottom"
           class="bg-[--primary] text-white rounded-2xl shadow-xl p-10 transform md:scale-105 transition-all duration-300 border-4 border-[--primary] text-left">
           <div class="w-14 h-14 flex items-center justify-center rounded-xl bg-white text-blue-600 mb-6">
             <!-- Icon -->
@@ -587,7 +587,7 @@
         </div>
 
         <!-- Card 3 -->
-        <div data-aos="flip-left" class="bg-white rounded-2xl shadow-md hover:shadow-lg transition duration-300 p-8 text-left">
+        <div data-aos="flip-left" data-aos-anchor-placement="top-bottom" class="bg-white rounded-2xl shadow-md hover:shadow-lg transition duration-300 p-8 text-left">
           <div class="w-14 h-14 flex items-center justify-center rounded-xl bg-green-100 text-green-600 mb-6">
             <!-- Icon -->
             <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -619,7 +619,7 @@
 
       <div  class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         <!-- Industry Card -->
-        <div data-aos="zoom-in-right" class="relative group overflow-hidden rounded-xl shadow-md">
+        <div data-aos="zoom-in-right" data-aos-anchor-placement="top-bottom" class="relative group overflow-hidden rounded-xl shadow-md">
           <img src="./assets/automotive.jpg" alt="Automotive"
             class="w-full h-64 object-cover transform group-hover:scale-105 transition duration-500">
           <div class="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition duration-500 flex items-end p-4">
@@ -632,7 +632,7 @@
         </div>
 
         <!-- Aerospace -->
-        <div data-aos="zoom-in-left" class="relative group overflow-hidden rounded-xl shadow-md">
+        <div data-aos="zoom-in-left" data-aos-anchor-placement="top-bottom" class="relative group overflow-hidden rounded-xl shadow-md">
           <img src="./assets/aerospace.jpg" alt="Aerospace"
             class="w-full h-64 object-cover transform group-hover:scale-105 transition duration-500">
           <div class="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition duration-500 flex items-end p-4">
@@ -645,7 +645,7 @@
         </div>
 
         <!-- Defence -->
-        <div data-aos="zoom-in-right" class="relative group overflow-hidden rounded-xl shadow-md">
+        <div data-aos="zoom-in-right" data-aos-anchor-placement="top-bottom" class="relative group overflow-hidden rounded-xl shadow-md">
           <img src="./assets/defence.jpg" alt="Defence"
             class="w-full h-64 object-cover transform group-hover:scale-105 transition duration-500">
           <div class="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition duration-500 flex items-end p-4">
@@ -658,7 +658,7 @@
         </div>
 
         <!-- Electronics -->
-        <div data-aos="zoom-in-left" class="relative group overflow-hidden rounded-xl shadow-md">
+        <div data-aos="zoom-in-left" data-aos-anchor-placement="top-bottom" class="relative group overflow-hidden rounded-xl shadow-md">
           <img src="./assets/electronics.jpg" alt="Electronics"
             class="w-full h-64 object-cover transform group-hover:scale-105 transition duration-500">
           <div class="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition duration-500 flex items-end p-4">
@@ -671,7 +671,7 @@
         </div>
 
         <!-- IoT / IIoT -->
-        <div data-aos="zoom-in-right" class="relative group overflow-hidden rounded-xl shadow-md">
+        <div data-aos="zoom-in-right" data-aos-anchor-placement="top-bottom" class="relative group overflow-hidden rounded-xl shadow-md">
           <img src="./assets/iot1.jpg" alt="IoT"
             class="w-full h-64 object-cover transform group-hover:scale-105 transition duration-500">
           <div class="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition duration-500 flex items-end p-4">
@@ -684,7 +684,7 @@
         </div>
 
         <!-- Education -->
-        <div data-aos="zoom-in-left" class="relative group overflow-hidden rounded-xl shadow-md">
+        <div data-aos="zoom-in-left" data-aos-anchor-placement="top-bottom" class="relative group overflow-hidden rounded-xl shadow-md">
           <img src="./assets/education.webp" alt="Education"
             class="w-full h-64 object-cover transform group-hover:scale-105 transition duration-500">
           <div class="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition duration-500 flex items-end p-4">
@@ -697,7 +697,7 @@
         </div>
 
         <!-- Research -->
-        <div data-aos="zoom-in-right" class="relative group overflow-hidden rounded-xl shadow-md">
+        <div data-aos="zoom-in-right" data-aos-anchor-placement="top-bottom" class="relative group overflow-hidden rounded-xl shadow-md">
           <img src="./assets/research.jpg" alt="Research"
             class="w-full h-64 object-cover transform group-hover:scale-105 transition duration-500">
           <div class="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition duration-500 flex items-end p-4">
@@ -709,7 +709,7 @@
           </div>
         </div>
 
-        <div data-aos="zoom-in-left" class="relative group overflow-hidden rounded-xl shadow-md">
+        <div data-aos="zoom-in-left" data-aos-anchor-placement="top-bottom" class="relative group overflow-hidden rounded-xl shadow-md">
           <img src="./assets/healthcare.jpg" alt="Healthcare Tech"
             class="w-full h-64 object-cover transform group-hover:scale-105 transition duration-500">
           <div class="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition duration-500 flex items-end p-4">
@@ -723,7 +723,7 @@
 
 
         <!-- Power Industry -->
-        <div data-aos="zoom-in-right" class="relative group overflow-hidden rounded-xl shadow-md">
+        <div data-aos="zoom-in-right" data-aos-anchor-placement="top-bottom" class="relative group overflow-hidden rounded-xl shadow-md">
           <img src="./assets/power.jpg" alt="Power Industry"
             class="w-full h-64 object-cover transform group-hover:scale-105 transition duration-500">
           <div class="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition duration-500 flex items-end p-4">
@@ -754,7 +754,7 @@
 
         <!-- Contact Details -->
         <div data-aos="fade-up"
-        data-aos-anchor-placement="center-bottom" class="bg-gray-50 p-10 rounded-2xl shadow-md flex flex-col justify-between h-full">
+        data-aos-anchor-placement="top-bottom" class="bg-gray-50 p-10 rounded-2xl shadow-md flex flex-col justify-between h-full">
           <div>
             <h2 class="text-3xl font-bold text-gray-900 mb-5 leading-snug">Let's Engineer Your Future.</h2>
             <p class="text-gray-600 mb-8 text-base leading-relaxed">
@@ -820,7 +820,7 @@
 
         <!-- Form -->
         <div data-aos="fade-up"
-        data-aos-anchor-placement="center-bottom" class="bg-gray-50 p-8 rounded-2xl shadow-md">
+        data-aos-anchor-placement="top-bottom" class="bg-gray-50 p-8 rounded-2xl shadow-md">
           <h2 class="text-2xl font-bold text-gray-900 mb-6">Send Us a Message</h2>
           <form action="https://formspree.io/f/meozaqgp" method="POST"  class="space-y-5">
             <div>
