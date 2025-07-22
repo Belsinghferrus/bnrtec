@@ -8,20 +8,53 @@ AOS.init({
 
 
 //BNR TITLE
+// document.addEventListener("DOMContentLoaded", () => {
+//   const heading = document.querySelector("#bnr-hero-heading");
+
+//   const isMobile = window.innerWidth < 768;
+
+//   // Reset style
+//   heading.style.opacity = 0;
+//   heading.style.transform = isMobile ? "translateY(30px) scale(0.9)" : "scale(0.95)";
+//   heading.style.transition = "all 2s ease-out";
+
+//   // Animate
+//   setTimeout(() => {
+//     heading.style.opacity = 1;
+//     heading.style.transform = "translateY(0) scale(1)";
+//   }, 200);
+// });
+
 document.addEventListener("DOMContentLoaded", () => {
-    const heading = document.querySelector("#bnr-hero-heading");
-  
-    // Reset initial style
-    heading.style.opacity = 0;
-    heading.style.transform = "scale(0.95)";
-    heading.style.transition = "all 1.2s ease-out";
-  
-    // Animate on load
-    setTimeout(() => {
-      heading.style.opacity = 1;
-      heading.style.transform = "scale(1)";
-    }, 300);
+  const heading = document.querySelector("#bnr-hero-heading");
+  const paragraph = document.querySelector("#bnr-hero-heading + p");
+  const button = document.querySelector("#bnr-hero-heading").nextElementSibling.nextElementSibling;
+
+  const isMobile = window.innerWidth < 768;
+
+  // Apply base styles
+  [heading, paragraph, button].forEach((el) => {
+    el.style.opacity = 0;
+    el.style.transform = isMobile ? "translateY(20px)" : "translateY(10px)";
+    el.style.transition = "all 1s ease-out";
   });
+
+  // Animate each with delay
+  setTimeout(() => {
+    heading.style.opacity = 1;
+    heading.style.transform = "translateY(0)";
+  }, 200);
+
+  setTimeout(() => {
+    paragraph.style.opacity = 1;
+    paragraph.style.transform = "translateY(0)";
+  }, 500);
+
+  setTimeout(() => {
+    button.style.opacity = 1;
+    button.style.transform = "translateY(0)";
+  }, 750);
+});
 
   
 
@@ -74,7 +107,7 @@ document.querySelectorAll("#mobileMenu nav a").forEach(link => {
     });
   });
 
-  
+
 
   // HERO IMAGE LOADING ANIMATION
   const heroSection = document.getElementById('hero-section');
