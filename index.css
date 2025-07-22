@@ -1,11 +1,12 @@
 body {
     font-family:'Plus Jakarta Sans' ;
-    
+    overflow-x: hidden;
   }
 
 
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
   }
 
 

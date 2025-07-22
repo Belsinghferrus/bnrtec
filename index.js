@@ -1,3 +1,13 @@
+
+
+//AOS ANIMATION
+AOS.init({
+  duration: 1000, // animation duration in ms
+  // once: true,     // animate only once
+});
+
+
+//BNR TITLE
 document.addEventListener("DOMContentLoaded", () => {
     const heading = document.querySelector("#bnr-hero-heading");
   
@@ -14,29 +24,9 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   
-//   const buttons = document.querySelectorAll('.tab-btn');
-//   const panels = document.querySelectorAll('.product-panel');
-
-//   buttons.forEach(btn => {
-//     btn.addEventListener('click', () => {
-//       const target = btn.getAttribute('data-tab');
-
-//       // Switch tab classes
-//       buttons.forEach(b => {
-//         b.classList.toggle('bg-blue-600', b === btn);
-//         b.classList.toggle('text-white', b === btn);
-//         b.classList.toggle('bg-gray-200', b !== btn);
-//         b.classList.toggle('text-gray-800', b !== btn);
-//       });
-
-//       // Show/hide content panels
-//       panels.forEach(panel => {
-//         panel.classList.toggle('hidden', panel.getAttribute('data-content') !== target);
-//       });
-//     });
-//   });
 
 
+// PRODUCT TAB BUTTON
 const tabs = document.querySelectorAll('.tab-btn');
 const panels = document.querySelectorAll('.product-panel');
 
@@ -65,6 +55,8 @@ tabs.forEach(btn => {
 });
 
 
+
+//MENU BUTTON FOR MOBILE
 const menuBtn = document.getElementById("menuBtn");
 const mobileMenu = document.getElementById("mobileMenu");
 const closeMenu = document.getElementById("closeMenu");
@@ -81,3 +73,22 @@ document.querySelectorAll("#mobileMenu nav a").forEach(link => {
       mobileMenu.classList.add("translate-x-full");
     });
   });
+
+
+  // HERO IMAGE LOADING ANIMATION
+  const heroSection = document.getElementById('hero-section');
+  const images = [
+    './assets/bnr-hero.webp',  
+    './assets/Hero-2.jpg',
+    './assets/Hero-3.jpeg'
+  ];
+
+  let current = 0;
+
+  // Start slideshow after slight delay to prioritize first paint
+  setTimeout(() => {
+    setInterval(() => {
+      current = (current + 1) % images.length;
+      heroSection.style.backgroundImage = `url('${images[current]}')`;
+    }, 3000);
+  }, 500); 
