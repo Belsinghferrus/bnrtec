@@ -25,38 +25,56 @@ AOS.init({
 //   }, 200);
 // });
 
+// document.addEventListener("DOMContentLoaded", () => {
+//   const heading = document.querySelector("#bnr-hero-heading");
+//   const paragraph = document.querySelector("#bnr-hero-heading + p");
+//   const button = document.querySelector("#bnr-hero-heading").nextElementSibling.nextElementSibling;
+
+//   const isMobile = window.innerWidth < 768;
+
+//   // Apply base styles
+//   [heading, paragraph, button].forEach((el) => {
+//     el.style.opacity = 0;
+//     el.style.transform = isMobile ? "translateY(20px)" : "translateY(10px)";
+//     el.style.transition = "all 1s ease-out";
+//   });
+
+//   // Animate each with delay
+//   setTimeout(() => {
+//     heading.style.opacity = 1;
+//     heading.style.transform = "translateY(0)";
+//   }, 200);
+
+//   setTimeout(() => {
+//     paragraph.style.opacity = 1;
+//     paragraph.style.transform = "translateY(0)";
+//   }, 500);
+
+//   setTimeout(() => {
+//     button.style.opacity = 1;
+//     button.style.transform = "translateY(0)";
+//   }, 750);
+// });
+
 document.addEventListener("DOMContentLoaded", () => {
-  const heading = document.querySelector("#bnr-hero-heading");
-  const paragraph = document.querySelector("#bnr-hero-heading + p");
-  const button = document.querySelector("#bnr-hero-heading").nextElementSibling.nextElementSibling;
+  const faders = document.querySelectorAll(".fade-up");
 
-  const isMobile = window.innerWidth < 768;
+  const appearOptions = {
+    threshold: 0.2,
+    rootMargin: "0px 0px -20px 0px"
+  };
 
-  // Apply base styles
-  [heading, paragraph, button].forEach((el) => {
-    el.style.opacity = 0;
-    el.style.transform = isMobile ? "translateY(20px)" : "translateY(10px)";
-    el.style.transition = "all 1s ease-out";
-  });
+  const appearOnScroll = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add("show");
+      observer.unobserve(entry.target); // Only trigger once
+    });
+  }, appearOptions);
 
-  // Animate each with delay
-  setTimeout(() => {
-    heading.style.opacity = 1;
-    heading.style.transform = "translateY(0)";
-  }, 200);
-
-  setTimeout(() => {
-    paragraph.style.opacity = 1;
-    paragraph.style.transform = "translateY(0)";
-  }, 500);
-
-  setTimeout(() => {
-    button.style.opacity = 1;
-    button.style.transform = "translateY(0)";
-  }, 750);
+  faders.forEach(fader => appearOnScroll.observe(fader));
 });
 
-  
 
 
 // PRODUCT TAB BUTTON
