@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://bnrtec.in/sitemap.xml

@@ -3,58 +3,9 @@
 //AOS ANIMATION
 AOS.init({
   duration: 1000, // animation duration in ms
-  // once: true,     // animate only once
+  // once: true,   
 });
 
-
-//BNR TITLE
-// document.addEventListener("DOMContentLoaded", () => {
-//   const heading = document.querySelector("#bnr-hero-heading");
-
-//   const isMobile = window.innerWidth < 768;
-
-//   // Reset style
-//   heading.style.opacity = 0;
-//   heading.style.transform = isMobile ? "translateY(30px) scale(0.9)" : "scale(0.95)";
-//   heading.style.transition = "all 2s ease-out";
-
-//   // Animate
-//   setTimeout(() => {
-//     heading.style.opacity = 1;
-//     heading.style.transform = "translateY(0) scale(1)";
-//   }, 200);
-// });
-
-// document.addEventListener("DOMContentLoaded", () => {
-//   const heading = document.querySelector("#bnr-hero-heading");
-//   const paragraph = document.querySelector("#bnr-hero-heading + p");
-//   const button = document.querySelector("#bnr-hero-heading").nextElementSibling.nextElementSibling;
-
-//   const isMobile = window.innerWidth < 768;
-
-//   // Apply base styles
-//   [heading, paragraph, button].forEach((el) => {
-//     el.style.opacity = 0;
-//     el.style.transform = isMobile ? "translateY(20px)" : "translateY(10px)";
-//     el.style.transition = "all 1s ease-out";
-//   });
-
-//   // Animate each with delay
-//   setTimeout(() => {
-//     heading.style.opacity = 1;
-//     heading.style.transform = "translateY(0)";
-//   }, 200);
-
-//   setTimeout(() => {
-//     paragraph.style.opacity = 1;
-//     paragraph.style.transform = "translateY(0)";
-//   }, 500);
-
-//   setTimeout(() => {
-//     button.style.opacity = 1;
-//     button.style.transform = "translateY(0)";
-//   }, 750);
-// });
 
 document.addEventListener("DOMContentLoaded", () => {
   const faders = document.querySelectorAll(".fade-up");
@@ -127,20 +78,86 @@ document.querySelectorAll("#mobileMenu nav a").forEach(link => {
 
 
 
-  // HERO IMAGE LOADING ANIMATION
+  // // HERO IMAGE LOADING ANIMATION
+  // const heroSection = document.getElementById('hero-section');
+  // const images = [
+  //   './assets/bnr-hero.webp',  
+  //   './assets/Hero-2.jpg',
+  //   './assets/Hero-3.jpeg'
+  // ];
+
+  // let current = 0;
+
+  // // Start slideshow after slight delay to prioritize first paint
+  // setTimeout(() => {
+  //   setInterval(() => {
+  //     current = (current + 1) % images.length;
+  //     heroSection.style.backgroundImage = `url('${images[current]}')`;
+  //   }, 3000);
+  // }, 500); 
+
+
+
+
+
+  // let imagesToLoad = 3; // number of slideshow images
+
+  // function imageLoaded() {
+  //   imagesToLoad--;
+  //   if (imagesToLoad === 0) {
+  //     // All images loaded
+  //     const preloader = document.getElementById("preloader");
+  //     preloader.style.opacity = "0";
+  //     preloader.style.pointerEvents = "none";
+  //     setTimeout(() => preloader.remove(), 500);
+
+  //     // Reveal the slideshow
+  //     document.querySelectorAll(".slideshow-img").forEach(img => {
+  //       img.classList.remove("hidden");
+  //       img.classList.add("block");
+  //     });
+  //   }
+  // }
+
   const heroSection = document.getElementById('hero-section');
-  const images = [
-    './assets/bnr-hero.webp',  
-    './assets/Hero-2.jpg',
-    './assets/Hero-3.jpeg'
-  ];
+const images = [
+  './assets/bnr-hero.webp',
+  './assets/Hero-2.webp',
+  './assets/Hero-3.webp'
+];
 
-  let current = 0;
+let loadedImages = 0;
 
-  // Start slideshow after slight delay to prioritize first paint
-  setTimeout(() => {
-    setInterval(() => {
-      current = (current + 1) % images.length;
-      heroSection.style.backgroundImage = `url('${images[current]}')`;
-    }, 3000);
-  }, 500); 
+// Preload all images manually
+images.forEach(src => {
+  const img = new Image();
+  img.src = src;
+  img.onload = () => {
+    loadedImages++;
+    if (loadedImages === images.length) {
+      startSlideshow(); 
+      hidePreloader();
+    }
+  };
+});
+
+// Hide preloader and reveal hero
+function hidePreloader() {
+  const preloader = document.getElementById("preloader");
+  preloader.style.opacity = "0";
+  preloader.style.pointerEvents = "none";
+  setTimeout(() => preloader.remove(), 500);
+}
+
+// Start the slideshow
+let current = 0;
+function startSlideshow() {
+  // Set initial background
+  heroSection.style.backgroundImage = `url('${images[current]}')`;
+
+  // Change every 3 seconds
+  setInterval(() => {
+    current = (current + 1) % images.length;
+    heroSection.style.backgroundImage = `url('${images[current]}')`;
+  }, 3000);
+}
